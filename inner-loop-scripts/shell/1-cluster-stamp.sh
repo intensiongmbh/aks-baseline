@@ -17,7 +17,7 @@ AKS_ENDUSER_PASSWORD=${10}
 
 # Used for services that support native geo-redundancy (Azure Container Registry)
 # Ideally should be the paired region of $LOCATION
-GEOREDUNDANCY_LOCATION=centralus
+GEOREDUNDANCY_LOCATION=westeurope
 
 APPGW_APP_URL=bicycle.contoso.com
 

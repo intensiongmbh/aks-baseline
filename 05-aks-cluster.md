@@ -12,7 +12,7 @@ Now that the [hub-spoke network is provisioned](./04-networking.md), the next st
 
    ```bash
    # [This takes less than one minute.]
-   az group create --name rg-bu0001a0008 --location eastus2
+   az group create --name rg-bu0001a0008 --location francecentral
    ```
 
 1. Get the AKS cluster spoke VNet resource ID.
@@ -91,9 +91,9 @@ Now that the [hub-spoke network is provisioned](./04-networking.md), the next st
        ```bash
        mkdir -p .github/workflows
        cat github-workflow/aks-deploy.yaml | \
-           sed "s#<resource-group-location>#eastus2#g" | \
+           sed "s#<resource-group-location>#francecentral#g" | \
            sed "s#<resource-group-name>#rg-bu0001a0008#g" | \
-           sed "s#<geo-redundancy-location>#centralus#g" | \
+           sed "s#<geo-redundancy-location>#westeurope#g" | \
            sed "s#<cluster-spoke-vnet-resource-id>#${RESOURCEID_VNET_CLUSTERSPOKE}#g" | \
            sed "s#<tenant-id-with-user-admin-permissions>#${TENANTID_K8SRBAC_AKS_BASELINE}#g" | \
            sed "s#<azure-ad-aks-admin-group-object-id>#${AADOBJECTID_GROUP_CLUSTERADMIN_AKS_BASELINE}#g" | \
